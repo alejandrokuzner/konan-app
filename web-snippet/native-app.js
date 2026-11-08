@@ -21,11 +21,16 @@
 
   // שם הטכנאי, אם הדף שומר אותו (לא חובה — ההתראות נשלחות לכולם כמו ב-web)
   function currentTech() {
-    try { return window.KONAN_TECH || localStorage.getItem('tech_name') || localStorage.getItem('techName') || null; }
+    try { return window.KONAN_TECH || localStorage.getItem('technician') || null; }
     catch (_) { return null; }
   }
 
+  var lastToken = null;
+  // konan.html קורא לזה כשהטכנאי בוחר את שמו — מעדכן את השם של המכשיר בשרת
+  window.konanNativeSetTech = function () { if (lastToken) register(lastToken); };
+
   function register(token) {
+    lastToken = token;
     var key = 'konan_native_token';
     var body = JSON.stringify({ token: token, platform: C.getPlatform(), tech: currentTech() });
     fetch(API + '/push/native-register', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: body })
