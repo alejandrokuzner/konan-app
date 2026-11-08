@@ -1,0 +1,24 @@
+{
+  "appId": "il.ac.ruppin.konan",
+  "appName": "קונאן",
+  "webDir": "www",
+  "server": {
+    "url": "https://ruppin.ac.il/landpages/it/konan-schedule.html",
+    "errorPath": "offline.html",
+    "allowNavigation": ["ruppin.ac.il", "*.ruppin.ac.il"]
+  },
+  "android": {
+    "allowMixedContent": false,
+    "backgroundColor": "#ffffff"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 1200,
+      "backgroundColor": "#1b6b4f",
+      "showSpinner": false
+    },
+    "PushNotifications": {
+      "presentationOptions": ["badge", "sound", "alert"]
+    }
+  }
+}

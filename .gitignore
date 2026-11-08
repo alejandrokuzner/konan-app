@@ -1,0 +1,4 @@
+node_modules/
+.keystore-password
+android/app/google-services.json.bak
+*.log
