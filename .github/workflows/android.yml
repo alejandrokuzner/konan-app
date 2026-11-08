@@ -62,7 +62,7 @@ jobs:
         run: |
           chmod +x gradlew
           # retry: the Gradle download from services.gradle.org sometimes times out
-          for i in 1 2 3; do ./gradlew --version > /dev/null && break; echo "gradle download retry $i"; sleep 15; done
+          for i in 1 2 3 4 5 6; do ./gradlew --version > /dev/null && break; echo "gradle download retry $i"; sleep $((i*20)); done
           ./gradlew assembleRelease --no-daemon
           cp app/build/outputs/apk/release/app-release.apk ../konan.apk
 
