@@ -61,9 +61,25 @@ jobs:
           VERSION_CODE: ${{ github.run_number }}
         run: |
           chmod +x gradlew
-          # retry: the Gradle download from services.gradle.org sometimes times out
-          for i in 1 2 3 4 5 6; do ./gradlew --version > /dev/null && break; echo "gradle download retry $i"; sleep $((i*20)); done
-          ./gradlew assembleRelease --no-daemon
+          # The wrapper downloads Gradle from GitHub releases, which sometimes returns 504.
+          # Try it twice; if it still fails, download the same Gradle version from a mirror.
+          GRADLE=./gradlew
+          ok=0
+          for i in 1 2; do ./gradlew --version > /dev/null 2>&1 && { ok=1; break; }; echo "wrapper download failed ($i)"; sleep 20; done
+          if [ "$ok" != 1 ]; then
+            V=8.11.1
+            for url in \
+              "https://mirrors.cloud.tencent.com/gradle/gradle-$V-bin.zip" \
+              "https://downloads.gradle.org/distributions/gradle-$V-bin.zip" \
+              "https://services.gradle.org/distributions/gradle-$V-bin.zip"; do
+              echo "trying $url"
+              curl -fL --retry 3 --retry-delay 10 --connect-timeout 30 -o /tmp/gradle.zip "$url" && break
+            done
+            unzip -q /tmp/gradle.zip -d /tmp/gradle-dist
+            GRADLE=/tmp/gradle-dist/gradle-$V/bin/gradle
+          fi
+          $GRADLE --version
+          $GRADLE assembleRelease --no-daemon
           cp app/build/outputs/apk/release/app-release.apk ../konan.apk
 
       - uses: actions/upload-artifact@v4
