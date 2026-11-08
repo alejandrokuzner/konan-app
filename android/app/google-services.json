@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "485268763462",
+    "project_id": "konan-ruppin",
+    "storage_bucket": "konan-ruppin.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:485268763462:android:d1866d5c572e1f5517eb47",
+        "android_client_info": {
+          "package_name": "il.ac.ruppin.konan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvUS-sjLSiBP81zoL3aM_Kgo6yZ_gGWIM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
