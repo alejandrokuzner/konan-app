@@ -3,7 +3,7 @@
   "appName": "כונן רופין",
   "webDir": "www",
   "server": {
-    "url": "https://ruppin.ac.il/landpages/it/konan-schedule.html",
+    "url": "https://rupwpub.ruppin.ac.il/landpages/it/konan.html",
     "errorPath": "offline.html",
     "allowNavigation": ["ruppin.ac.il", "*.ruppin.ac.il"]
   },
