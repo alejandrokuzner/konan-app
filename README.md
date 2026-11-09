@@ -1,6 +1,6 @@
 # כונן רופין — אפליקציית אנדרואיד
 
-מעטפת Capacitor שטוענת את מערכת כונן רופין מהשרת (`https://rupwpub.ruppin.ac.il/landpages/it/konan.html`).
+מעטפת Capacitor שטוענת את מערכת כונן רופין מהשרת (`https://rupwpub.ruppin.ac.il/landpages/it/konan-home.html`).
 כל שינוי באתר מגיע לאפליקציה אוטומטית — אין צורך לבנות APK מחדש.
 APK חדש נדרש רק כשמשנים את המעטפת עצמה (אייקון, הרשאות, כתובת התחלה, Firebase).
 

@@ -3,7 +3,7 @@
   "appName": "כונן רופין",
   "webDir": "www",
   "server": {
-    "url": "https://rupwpub.ruppin.ac.il/landpages/it/konan.html",
+    "url": "https://rupwpub.ruppin.ac.il/landpages/it/konan-home.html",
     "errorPath": "offline.html",
     "allowNavigation": ["ruppin.ac.il", "*.ruppin.ac.il"]
   },
@@ -14,7 +14,7 @@
   "plugins": {
     "SplashScreen": {
       "launchShowDuration": 1200,
-      "backgroundColor": "#1b6b4f",
+      "backgroundColor": "#1B6B4F",
       "showSpinner": false
     },
     "PushNotifications": {
