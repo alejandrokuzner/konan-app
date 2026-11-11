@@ -91,6 +91,6 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.${{ github.run_number }}
-          name: כונן רופין 1.0.${{ github.run_number }}
+          name: כוננים 1.0.${{ github.run_number }}
           files: konan.apk
           make_latest: true
