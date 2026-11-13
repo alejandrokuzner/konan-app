@@ -45,6 +45,16 @@
     if (url) location.href = url; else location.reload();
   });
 
+  // כשפותחים את האפליקציה או חוזרים אליה — מנקים את ההתראות שנשארו בלוח ההתראות,
+  // כדי שהמספר על האייקון ייעלם (סמסונג סופר התראות שלא הוסרו)
+  function clearDelivered() {
+    try { if (Push.removeAllDeliveredNotifications) Push.removeAllDeliveredNotifications(); } catch (_) {}
+  }
+  clearDelivered();
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'visible') clearDelivered();
+  });
+
   (async function init() {
     try {
       if (C.getPlatform() === 'android') {
