@@ -5,7 +5,16 @@
   "server": {
     "url": "https://rupwpub.ruppin.ac.il/landpages/it/konan-home.html",
     "errorPath": "offline.html",
-    "allowNavigation": ["ruppin.ac.il", "*.ruppin.ac.il"]
+    "allowNavigation": [
+      "ruppin.ac.il",
+      "*.ruppin.ac.il",
+      "login.microsoftonline.com",
+      "login.microsoft.com",
+      "*.msauth.net",
+      "*.msftauth.net",
+      "login.live.com",
+      "autologon.microsoftazuread-sso.com"
+    ]
   },
   "android": {
     "allowMixedContent": false,
@@ -18,7 +27,12 @@
       "showSpinner": false
     },
     "PushNotifications": {
-      "presentationOptions": ["badge", "sound", "alert"]
+      "presentationOptions": [
+        "badge",
+        "sound",
+        "alert"
+      ]
     }
-  }
+  },
+  "appendUserAgent": "KonanApp/2"
 }
